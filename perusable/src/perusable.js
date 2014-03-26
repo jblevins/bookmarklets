@@ -60,7 +60,7 @@
 	} else {
 		infoBox=node=update=msg=walker=reus=reusables=undefined;
 		if (window.location.href.search('s_debug=true')==-1){
-			if(confirm("No reusable were found. Reload with s_debug=true?\n(You'll have to click the bookmarklet again afterwards)")){
+			if(confirm("No reusables were found. Reload with s_debug=true?\n(You'll have to click the bookmarklet again afterward)")){
 				window.location=window.location.href.replace(/\?|(#|$)/,'?s_debug=true&$1')
 			}
 		} else {
