@@ -56,7 +56,7 @@
 		document.body.appendChild(infoBox);
 		document.body.addEventListener('mouseover',update);
 		alert("The following reusables are present on this page:\n"+reusables.join('\n'));
-		console.log("The following reusables are present on this page:\n"+reusables.join('\n'));
+		console.log("The following reusables are present on this page:\n(These are also logged to the console)\n"+reusables.join('\n')+"\nShift click on an element to log its closest reusable to the console.");
 	} else {
 		infoBox=node=update=msg=walker=reus=reusables=undefined;
 		if (window.location.href.search('s_debug=true')==-1){
