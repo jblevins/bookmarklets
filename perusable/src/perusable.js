@@ -16,10 +16,10 @@
 			infoBox.style.top='0px';
 			infoBox.style.visibility='hidden';
 			setTimeout(function(){
-				infoBox.style.left=Math.min(e.x+4, window.innerWidth-infoBox.offsetWidth-15)+'px';
-				infoBox.style.top=Math.max(0,(e.y-(4+infoBox.offsetHeight)))+'px';
+				infoBox.style.left=Math.min(e.clientX+4, window.innerWidth-infoBox.offsetWidth-15)+'px';
+				infoBox.style.top=Math.max(0,(e.clientY-(4+infoBox.offsetHeight)))+'px';
 				infoBox.style.visibility='visible';
-			});
+			},1);
 			e.stopPropagation();
 			return false;
 		},
@@ -60,7 +60,7 @@
 	} else {
 		infoBox=node=update=msg=walker=reus=reusables=undefined;
 		if (window.location.href.search('s_debug=true')==-1){
-			if(confirm("No reusable were found. Reload with s_debug=true?")){
+			if(confirm("No reusable were found. Reload with s_debug=true?\n(You'll have to click the bookmarklet again afterwards)")){
 				window.location=window.location.href.replace(/\?|(#|$)/,'?s_debug=true&$1')
 			}
 		} else {
