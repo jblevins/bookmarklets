@@ -50,13 +50,13 @@
 		}
 	}
 	if (reusables.length){
-		infoBox.innerHTML='<div style=&quot;border-radius:8px;box-shadow:2px 2px 4px rgba(0,0,0,.7);white-space:nowrap;z-index:99999;padding:2px 5px;position:fixed; background:white; border: 1px solid black; width:auto; top:0;left:0;min-width: 60px;&quot;></div>';
+		infoBox.innerHTML="<div style='border-radius:8px;box-shadow:2px 2px 4px rgba(0,0,0,.7);white-space:nowrap;z-index:99999;padding:2px 5px;position:fixed; background:white; border: 1px solid black; width:auto; top:0;left:0;min-width: 60px;'></div>";
 		infoBox=infoBox.firstChild;
 		infoBox.appendChild(msg);
 		document.body.appendChild(infoBox);
 		document.body.addEventListener('mouseover',update);
-		alert('The following reusables are present on this page:\nThese are also logged to the console)\n'+reusables.join('\n'));
-		console.log('The following reusables are present on this page:\n('+reusables.join('\n')+'\nShift click on an element to log its closest reusable to the console.');
+		alert('The following reusables are present on this page:\n(These are also logged to the console)\n'+reusables.join('\n'));
+		console.log('The following reusables are present on this page:\n'+reusables.join('\n')+'\nShift click on an element to log its closest reusable to the console.');
 	} else {
 		infoBox=node=update=msg=walker=reus=reusables=undefined;
 		if (window.location.href.search('s_debug=true')==-1){
