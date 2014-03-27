@@ -29,7 +29,8 @@
 			}
 			e.stopPropagation();
 			return false;
-		};
+		},
+		spaces="                                                  ";
 	while (node=walker.nextNode()){
 		if (node.nodeType==1){
 			if (reus.length) {
@@ -41,7 +42,7 @@
 		}
 		if (node.nodeValue.search('Begin content from page:') > -1) {
 			reus.push(node.nodeValue.replace('Begin content from page: ','').replace(/(^\s+)|(\s+$)/g,''));
-			reusables.push(node.nodeValue.replace('Begin content from page: ','').replace(/(^\s+)|(\s+$)/g,''));
+			reusables.push(spaces.substr(0,(reus.length-1)*4)+node.nodeValue.replace('Begin content from page: ','').replace(/(^\s+)|(\s+$)/g,''));
 			continue;
 		}
 		if (node.nodeValue.search('End of page content from page: ') > -1) {
@@ -55,8 +56,8 @@
 		infoBox.appendChild(msg);
 		document.body.appendChild(infoBox);
 		document.body.addEventListener('mouseover',update);
-		alert('The following reusables are present on this page:\n(These are also logged to the console)\n'+reusables.join('\n'));
 		console.log('The following reusables are present on this page:\n'+reusables.join('\n')+'\nShift click on an element to log its closest reusable to the console.');
+		alert('The following reusables are present on this page:\n(These are also logged to the console)\n'+reusables.join('\n'));
 	} else {
 		infoBox=node=update=msg=walker=reus=reusables=undefined;
 		if (window.location.href.search('s_debug=true')==-1){
